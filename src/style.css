@@ -99,6 +99,10 @@ ul {
     font-weight: 500;
 }
 
+.footer a {
+    text-decoration: none;
+}
+
 #current-location {
     display: block;
     margin: 10px auto;
