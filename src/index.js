@@ -75,16 +75,12 @@ function showPosition(position) {
   axios.get(apiUrl).then(updateCurrentMeteo);     
 }
 
-function useNavigator() {
 
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
 
 let searchIconElement = document.querySelector("button");
 searchIconElement.addEventListener("click", handleSearch);
 
-let buttonCurrent = document.querySelector("#current-location");
-buttonCurrent.addEventListener("click", useNavigator);
+
 
 searchCity("Brussels");
 
