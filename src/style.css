@@ -35,6 +35,17 @@ button {
     background: none;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    font-family: "Lora", serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #5a5560;
+    line-height: 2;
+    font-style: italic;
+}
+
 .app-container {
     max-width: 400px;
     margin: 30px auto;
@@ -60,15 +71,8 @@ button {
     color: #5a5560;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    font-family: "Lora", serif;
-    font-weight: 500;
-    font-size: 12px;
-    color: #5a5560;
-    line-height: 2;
-    font-style: italic;
+.weather-description {
+    text-transform: capitalize;
 }
 
 .temperatures-per-days {
