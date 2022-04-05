@@ -31,8 +31,41 @@ return `${dayOfTheWeek} ${hours}:${minutes}`;
 let date = document.querySelector("#current-date");
 date.innerHTML = currentTime(currentDate);
 
+function setIconImage(code) {  
+  
+    if (code === "01d") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/01d.png`);
+    } else if (code === "01n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/01n.png`);
+    } else if (code === "02d") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/02d.png`);
+    } else if (code === "02n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/02n.png`);
+    } else if (code === "03d" || "03n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/03d.png`);
+    } else if (code === "04d" || "04n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/04d.png`);
+    } else if (code === "09d" || "09n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/09d.png`);
+    } else if (code === "10d") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/10d.png`);
+    }  else if (code === "10n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/10n.png`);
+    } else if (code === "11d") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/11d.png`);
+    } else if (code === "11n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/11n.png`);
+    } else if (code === "13d" || "13n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/13d.png`);
+    } else if (code === "50d" || "50n") {
+      document.querySelector("#weather-icon").setAttribute("src",`Images/50d.png`);
+    }
+    
+  }
 
 function updateCurrentMeteo(response) {
+
+  let code = response.data.weather[0].icon; 
   
   document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);    
 
@@ -42,8 +75,10 @@ function updateCurrentMeteo(response) {
   
   document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);  
 
-  document.querySelector("#city").innerHTML = response.data.name;       
-
+  document.querySelector("#city").innerHTML = response.data.name;    
+  
+  setIconImage(code);  
+  
 }
 
 function searchCity(city) {
