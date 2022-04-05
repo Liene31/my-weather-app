@@ -36,10 +36,13 @@ button {
 }
 
 .app-container {
-    border: 5px solid #dadde1;
-    padding: 50px 20px;
-    margin: 80px auto 10px;
     max-width: 400px;
+    margin: 30px auto;
+}
+
+.weather-wrap {
+    padding: 20px;
+    border: 5px solid #dadde1;
     border-radius: 15px;
 }
 
@@ -89,8 +92,7 @@ ul {
     color: #5a5560;
 }
 
-.footer {
-    display: block;
+.footer {    
     font-size: 12px;
     font-family: "Lora", serif;
     text-align: center;

@@ -27,72 +27,90 @@
   <body>
     <div class="container">
       <div class="app-container">
-        <h1 id="city"></h1>
-        <h2 id="current-date">Wed. 03/03/2022</h2>
-        <form>
-          <input type="search" id="search-city" placeholder="Search For City" autocomplete="off" />
-          <button>
-            <i class="fa fa-search search-icon"></i>
+        <div class="weather-wrap">
+          <h1 id="city"></h1>
+          <h2 id="current-date">Wed. 03/03/2022</h2>
+          <form>
+            <input
+              type="search"
+              id="search-city"
+              placeholder="Search For City"
+              autocomplete="off"
+            />
+            <button>
+              <i class="fa fa-search search-icon"></i>
+            </button>
+          </form>
+          <button type="button" class="btn btn-success" id="current-location">
+            Current
           </button>
-        </form>
-        <button type="button" class="btn btn-success" id="current-location">Current</button>
-        
 
-        <img
-          class="central-image"
-          src="Images/sun_rain_image.png"
-          alt="sun with rain"
-        />
-        <div class="row">
-          <div class="col-6 current-temperature" ><span id="current-temperature"></span>°C</div>
-          <div class="col">
-            <ul>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Visibility: <span id="visibility"></span></li>
-              <li id="wind">Wind: <span id="wind-speed"></span> km/h</li>
-            </ul>
-          </div>
-      </div>
-      
-     <div class="row temperatures-per-days">
-          <div class="col col-sm-2">
-            <div class="day-one">Sun</div>
-            <div class="day-one">
-              <img src="Images/cloudy-icon.png" alt="cloud" />
+          <img
+            class="central-image"
+            src="Images/sun_rain_image.png"
+            alt="sun with rain"
+          />
+          <div class="row">
+            <div class="col-6 current-temperature">
+              <span id="current-temperature"></span>°C
             </div>
-            <div class="day-one">10°C</div>
-          </div>
-          <div class="col col-sm-2">
-            <div class="day-two">Mon</div>
-            <div class="day-two">
-              <img src="Images/sun-cloud-icon.png" alt="sun and cloud" />
+            <div class="col">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Visibility: <span id="visibility"></span></li>
+                <li id="wind">Wind: <span id="wind-speed"></span> km/h</li>
+              </ul>
             </div>
-            <div class="day-two">7°C</div>
           </div>
-          <div class="col col-sm-2">
-            <div class="day-three">Tue</div>
-            <div class="day-three">
-              <img src="Images/sun-cloud-icon.png" alt="sun and cloud" />
+
+          <div class="row temperatures-per-days">
+            <div class="col col-sm-2">
+              <div class="day-one">Sun</div>
+              <div class="day-one">
+                <img src="Images/cloudy-icon.png" alt="cloud" />
+              </div>
+              <div class="day-one">10°C</div>
             </div>
-            <div class="day-three">6°C</div>
+            <div class="col col-sm-2">
+              <div class="day-two">Mon</div>
+              <div class="day-two">
+                <img src="Images/sun-cloud-icon.png" alt="sun and cloud" />
+              </div>
+              <div class="day-two">7°C</div>
+            </div>
+            <div class="col col-sm-2">
+              <div class="day-three">Tue</div>
+              <div class="day-three">
+                <img src="Images/sun-cloud-icon.png" alt="sun and cloud" />
+              </div>
+              <div class="day-three">6°C</div>
+            </div>
+            <div class="col col-sm-2">
+              <div class="day-four">Wed</div>
+              <div class="day-four">
+                <img src="Images/sun-cloud-icon.png" alt="sun and cloud" />
+              </div>
+              <div class="day-four">10°C</div>
+            </div>
+            <div class="col col-sm-2">
+              <div class="day-five">Thu</div>
+              <div class="day-five">
+                <img src="Images/cloud-rain-icon.png" alt="cloud and rain" />
+              </div>
+              <div class="day-five">12°C</div>
+            </div>
           </div>
-          <div class="col col-sm-2">
-            <div class="day-four">Wed</div>
-            <div class="day-four">
-              <img src="Images/sun-cloud-icon.png" alt="sun and cloud" />
-            </div>
-            <div class="day-four">10°C</div>
-          </div>
-          <div class="col col-sm-2">
-            <div class="day-five">Thu</div>
-            <div class="day-five">
-              <img src="Images/cloud-rain-icon.png" alt="cloud and rain" />
-            </div>
-            <div class="day-five">12°C</div>
-          </div>       
         </div>
+
+        <span class="footer"
+          ><a href="https://github.com/Liene31/my-weather-app" target="_blank"
+            >Open-source code</a
+          >
+          by LieneB
+        </span>
+      </div>
     </div>
-     <span class="footer"><a href="https://github.com/Liene31/my-weather-app" target="_blank">Open-source code</a> by LieneB </span>
+
     <script src="src/index.js"></script>
   </body>
 </html>
