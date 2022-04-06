@@ -32,6 +32,8 @@ let date = document.querySelector("#current-date");
 date.innerHTML = currentTime(currentDate);
 
 function setIconImage(code) {  
+
+  console.log(code);
   
     if (code === "01d") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/01d.png`);
@@ -41,23 +43,21 @@ function setIconImage(code) {
       document.querySelector("#weather-icon").setAttribute("src",`Images/02d.png`);
     } else if (code === "02n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/02n.png`);
-    } else if (code === "03d" || "03n") {
+    } else if (code === "03d" || code === "03n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/03d.png`);
-    } else if (code === "04d" || "04n") {
+    } else if (code === "04d" || code === "04n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/04d.png`);
-    } else if (code === "09d" || "09n") {
+    } else if (code === "09d" || code === "09n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/09d.png`);
     } else if (code === "10d") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/10d.png`);
     }  else if (code === "10n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/10n.png`);
-    } else if (code === "11d") {
+    } else if (code === "11d" || code === "11n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/11d.png`);
-    } else if (code === "11n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/11n.png`);
-    } else if (code === "13d" || "13n") {
+    } else if (code === "13d" || code === "13n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/13d.png`);
-    } else if (code === "50d" || "50n") {
+    } else if (code === "50d" || code === "50n") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/50d.png`);
     }
     
