@@ -129,6 +129,8 @@ function useNavigator() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+
+
 let celsiusTemperature = null;
 
 let searchIconElement = document.querySelector("#search-icon");
@@ -142,6 +144,7 @@ celsiusLink.addEventListener("click", showTemperatureCelsius);
 
 let buttonCurrent = document.querySelector("#current-location");
 buttonCurrent.addEventListener("click", useNavigator);
+
 
 
 searchCity("Brussels");
