@@ -57,10 +57,11 @@ function updateCurrentMeteo(response) {
 
       let code = response.data.weather[0].icon;  
       let currentDate = new Date(); 
+      celsiusTemperature = Math.round(response.data.main.temp);
 
       document.querySelector("#current-date").innerHTML = currentTime(currentDate);
       
-      document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);    
+      document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);    
 
       document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
 
@@ -108,15 +109,29 @@ function showPosition(position) {
 
 function showTemperatureFahrenheit(event) {
   event.preventDefault();
-
-  document.querySelector("#current-temperature").innerHTML = "20";
+  
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#current-temperature").innerHTML = Math.round(fahrenheitTemperature);
 }
+
+function showTemperatureCelsius(event) {
+  event.preventDefault();  
+  
+  document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
+}
+
+
+
+let celsiusTemperature = null;
 
 let searchIconElement = document.querySelector("button");
 searchIconElement.addEventListener("click", handleSearch);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showTemperatureFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showTemperatureCelsius);
 
 
 
