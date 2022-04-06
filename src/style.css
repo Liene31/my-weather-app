@@ -57,6 +57,10 @@ ul {
     border-radius: 15px;
 }
 
+.location {
+    color: #5a5560;
+}
+
 .central-image {
     display: block;
     margin: 30px auto;
