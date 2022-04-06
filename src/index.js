@@ -124,11 +124,16 @@ function showTemperatureCelsius(event) {
   document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
 }
 
+function useNavigator() {
+
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 
 
 let celsiusTemperature = null;
 
-let searchIconElement = document.querySelector("button");
+let searchIconElement = document.querySelector("#search-icon");
 searchIconElement.addEventListener("click", handleSearch);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -136,6 +141,9 @@ fahrenheitLink.addEventListener("click", showTemperatureFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showTemperatureCelsius);
+
+let buttonCurrent = document.querySelector("#current-location");
+buttonCurrent.addEventListener("click", useNavigator);
 
 
 
