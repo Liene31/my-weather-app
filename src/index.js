@@ -110,6 +110,8 @@ function showPosition(position) {
 function showTemperatureFahrenheit(event) {
   event.preventDefault();
   
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   document.querySelector("#current-temperature").innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -117,6 +119,8 @@ function showTemperatureFahrenheit(event) {
 function showTemperatureCelsius(event) {
   event.preventDefault();  
   
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
 }
 

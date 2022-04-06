@@ -80,9 +80,12 @@ ul {
 }
 
 .units a {
-    text-decoration: none;
-    color: #5a5560;
-    
+    text-decoration: none;    
+}
+
+.units .active {
+    color: rgb(33, 33, 33);
+    cursor: default;
 }
 
 .weather-description {
