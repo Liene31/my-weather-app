@@ -103,12 +103,20 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   
   axios.get(apiUrl).then(updateCurrentMeteo);     
+
 }
 
+function showTemperatureFahrenheit(event) {
+  event.preventDefault();
 
+  document.querySelector("#current-temperature").innerHTML = "20";
+}
 
 let searchIconElement = document.querySelector("button");
 searchIconElement.addEventListener("click", handleSearch);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showTemperatureFahrenheit);
 
 
 
