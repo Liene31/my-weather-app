@@ -67,8 +67,22 @@ ul {
     text-align: right;
     font-family: "Lora", serif;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 71px;
     color: #5a5560;
+    line-height: 1;
+    padding-right: 0px;
+}
+
+.units {    
+    font-size: 10px;   
+    position: relative;
+    top: -45px;
+}
+
+.units a {
+    text-decoration: none;
+    color: #5a5560;
+    
 }
 
 .weather-description {
