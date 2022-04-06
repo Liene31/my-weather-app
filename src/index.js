@@ -1,39 +1,29 @@
-//Updates Day and Time
 
-//Converts input in string and adds "0"
 function padTo2Digits(num) {
   return String(num).padStart(2, '0');
 }
 
-let currentDate = new Date();
-
 function currentTime(dateInput) {
 
-let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ];
 
-let dayOfTheWeek = days[dateInput.getDay()];
-let hours = padTo2Digits(dateInput.getHours());
-let minutes = padTo2Digits(dateInput.getMinutes());
+    let dayOfTheWeek = days[dateInput.getDay()];
+    let hours = padTo2Digits(dateInput.getHours());
+    let minutes = padTo2Digits(dateInput.getMinutes());
 
-return `${dayOfTheWeek} ${hours}:${minutes}`;
-
+    return `${dayOfTheWeek} ${hours}:${minutes}`;
 }
 
 
-let date = document.querySelector("#current-date");
-date.innerHTML = currentTime(currentDate);
-
-function setIconImage(code) {  
-
-  console.log(code);
+function setIconImage(code) {    
   
     if (code === "01d") {
       document.querySelector("#weather-icon").setAttribute("src",`Images/01d.png`);
@@ -65,19 +55,24 @@ function setIconImage(code) {
 
 function updateCurrentMeteo(response) {
 
-  let code = response.data.weather[0].icon; 
-  
-  document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);    
+      let code = response.data.weather[0].icon;  
+      let currentDate = new Date(); 
 
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
+      document.querySelector("#current-date").innerHTML = currentTime(currentDate);
+      
+      document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);    
 
-  document.querySelector("#description").innerHTML = response.data.weather[0].description;  
-  
-  document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);  
+      document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
 
-  document.querySelector("#city").innerHTML = response.data.name;    
-  
-  setIconImage(code);  
+      document.querySelector("#description").innerHTML = response.data.weather[0].description;  
+      
+      document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);  
+
+      document.querySelector("#city").innerHTML = response.data.name;    
+
+      console.log(response);
+      
+      setIconImage(code);  
   
 }
 
