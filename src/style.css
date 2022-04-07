@@ -101,9 +101,9 @@ ul {
     text-transform: capitalize;
 }
 
-.temperatures-per-days {
+.weather-forecast {
     margin-top: 25px;
-    padding-left: 50px;
+    text-align: center;
 }
 
 .temperatures-per-days img {
