@@ -24,19 +24,27 @@ function currentTime(dateInput) {
 
 function displayForecast() {
 
-  let forecastElement = document.querySelector("#weather-forecast");
-  forecastElement.innerHTML = `
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function(day){
 
-    <div class="row">
-      <div class="col col-sm-2">
-        <div class="temperature-date">Sun</div>
+    forecastHTML = forecastHTML + `
+
+    <div class="col col-sm-2">
+        <div class="temperature-date">${day}</div>
         <div class="temperature-img">
           <img src="Images/cloudy-icon.png" alt="cloud" />
         </div>
         <div class="temperature-of-the-date">10°C</div>
       </div>
-    </div>
-  `            
+      `;  
+  });
+
+  forecastHTML = forecastHTML + `</div>`; 
+
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = forecastHTML;   
+  console.log(forecastHTML);       
 }
 
 
@@ -86,9 +94,7 @@ function updateCurrentMeteo(response) {
       
       document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);  
 
-      document.querySelector("#city").innerHTML = response.data.name;    
-
-      console.log(response);
+      document.querySelector("#city").innerHTML = response.data.name;         
       
       setIconImage(code);  
   
