@@ -22,6 +22,23 @@ function currentTime(dateInput) {
     return `${dayOfTheWeek} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = `
+
+    <div class="row">
+      <div class="col col-sm-2">
+        <div class="temperature-date">Sun</div>
+        <div class="temperature-img">
+          <img src="Images/cloudy-icon.png" alt="cloud" />
+        </div>
+        <div class="temperature-of-the-date">10°C</div>
+      </div>
+    </div>
+  `            
+}
+
 
 function setIconImage(code) {    
   
@@ -148,6 +165,7 @@ buttonCurrent.addEventListener("click", useNavigator);
 
 
 searchCity("Brussels");
+displayForecast();
 
    
 

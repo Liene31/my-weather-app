@@ -110,11 +110,9 @@ ul {
     width: 25px;
 }
 
-.day-one,
-.day-two,
-.day-three,
-.day-four,
-.day-five {
+.temperature-date,
+.temperature-img,
+.temperature-of-the-date {
     text-align: center;
     font-family: "Lora", serif;
     font-weight: 700;
