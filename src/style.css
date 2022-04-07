@@ -59,6 +59,11 @@ ul {
 
 .location {
     color: #5a5560;
+    padding-right: 5px;
+}
+
+.location:hover {
+    cursor: pointer;
 }
 
 .central-image {
@@ -127,4 +132,5 @@ ul {
 .footer a {
     text-decoration: none;
 }
+
 

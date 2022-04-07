@@ -133,7 +133,7 @@ function useNavigator() {
 
 let celsiusTemperature = null;
 
-let searchIconElement = document.querySelector("#search-icon");
+let searchIconElement = document.querySelector("button");
 searchIconElement.addEventListener("click", handleSearch);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
