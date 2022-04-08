@@ -3,7 +3,9 @@ function padTo2Digits(num) {
   return String(num).padStart(2, '0');
 }
 
-function currentTime(dateInput) {
+function currentTime(timestamp) {
+  let currentDate = new Date(timestamp);
+  console.log(currentDate);
 
     let days = [
         "Sunday",
@@ -15,11 +17,11 @@ function currentTime(dateInput) {
         "Saturday"
       ];
 
-    let dayOfTheWeek = days[dateInput.getDay()];
-    let hours = padTo2Digits(dateInput.getHours());
-    let minutes = padTo2Digits(dateInput.getMinutes());
+    let dayOfTheWeek = days[currentDate.getDay()];
+    let hours = padTo2Digits(currentDate.getHours());
+    let minutes = padTo2Digits(currentDate.getMinutes());
 
-    return `${dayOfTheWeek} ${hours}:${minutes}`;
+    return `Updated on ${dayOfTheWeek} ${hours}:${minutes}`;
 }
 
 function displayForecast() {
@@ -43,8 +45,7 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`; 
 
   let forecastElement = document.querySelector("#weather-forecast");
-  forecastElement.innerHTML = forecastHTML;   
-  console.log(forecastHTML);       
+  forecastElement.innerHTML = forecastHTML;        
 }
 
 
@@ -80,11 +81,11 @@ function setIconImage(code) {
 
 function updateCurrentMeteo(response) {
 
-      let code = response.data.weather[0].icon;  
-      let currentDate = new Date(); 
+      let code = response.data.weather[0].icon;           
+      
       celsiusTemperature = Math.round(response.data.main.temp);
 
-      document.querySelector("#current-date").innerHTML = currentTime(currentDate);
+      document.querySelector("#current-date").innerHTML = currentTime(response.data.dt * 1000);
       
       document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);    
 
