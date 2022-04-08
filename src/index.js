@@ -4,8 +4,7 @@ function padTo2Digits(num) {
 }
 
 function currentTime(timestamp) {
-  let currentDate = new Date(timestamp);
-  console.log(currentDate);
+  let currentDate = new Date(timestamp);  
 
     let days = [
         "Sunday",
@@ -24,7 +23,9 @@ function currentTime(timestamp) {
     return `Updated on ${dayOfTheWeek} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+
+  console.log(response);
 
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML = `<div class="row">`;
@@ -79,6 +80,14 @@ function setIconImage(code) {
     
   }
 
+  function getForecast(coord) {
+        
+    let apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast); 
+  }
+
 function updateCurrentMeteo(response) {
 
       let code = response.data.weather[0].icon;           
@@ -95,9 +104,11 @@ function updateCurrentMeteo(response) {
       
       document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);  
 
-      document.querySelector("#city").innerHTML = response.data.name;         
+      document.querySelector("#city").innerHTML = response.data.name;      
       
-      setIconImage(code);  
+      
+      setIconImage(code);
+      getForecast(response.data.coord); 
   
 }
 
@@ -172,7 +183,7 @@ buttonCurrent.addEventListener("click", useNavigator);
 
 
 searchCity("Brussels");
-displayForecast();
+
 
    
 
