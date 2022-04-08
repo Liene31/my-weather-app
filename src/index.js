@@ -40,7 +40,7 @@ function displayForecast(response) {
   
   let forecastHTML = `<div class="row">`;
   forecastDaily.forEach(function(forecast, index) {
-    if(index < 5) {
+    if(index < 6) {
     forecastHTML = forecastHTML + `
 
     <div class="col col-sm-2">
