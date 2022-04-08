@@ -23,24 +23,35 @@ function currentTime(timestamp) {
     return `Updated on ${dayOfTheWeek} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+
+  let date = new Date(timestamp * 1000);  
+  let daysShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let dayOfTheWeek = daysShort[date.getDay()];
+
+  return dayOfTheWeek;
+}
+
 function displayForecast(response) {
 
-  console.log(response);
+  let forecastDaily = response.data.daily;
 
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  console.log(forecastDaily);
+  
   let forecastHTML = `<div class="row">`;
-  days.forEach(function(day){
-
+  forecastDaily.forEach(function(forecast, index) {
+    if(index < 5) {
     forecastHTML = forecastHTML + `
 
     <div class="col col-sm-2">
-        <div class="temperature-date">${day}</div>
+        <div class="temperature-date">${formatDay(forecast.dt)}</div>
         <div class="temperature-img">
-          <img src="Images/cloudy-icon.png" alt="cloud" />
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
         </div>
-        <div class="temperature-of-the-date">10°C</div>
+        <div class="temperature-of-the-date">${Math.round(forecast.temp.day)}°C</div>
       </div>
-      `;  
+      `;
+      }  
   });
 
   forecastHTML = forecastHTML + `</div>`; 
