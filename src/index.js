@@ -153,45 +153,16 @@ function showPosition(position) {
 
 }
 
-function showTemperatureFahrenheit(event) {
-  event.preventDefault();
-  
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#current-temperature").innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function showTemperatureCelsius(event) {
-  event.preventDefault();  
-  
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
-}
-
 function useNavigator() {
 
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-
-
-let celsiusTemperature = null;
-
 let searchIconElement = document.querySelector("button");
 searchIconElement.addEventListener("click", handleSearch);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showTemperatureFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showTemperatureCelsius);
-
 let buttonCurrent = document.querySelector("#current-location");
 buttonCurrent.addEventListener("click", useNavigator);
-
-
 
 searchCity("Brussels");
 
