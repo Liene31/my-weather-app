@@ -32,11 +32,10 @@ function formatDay(timestamp) {
   return dayOfTheWeek;
 }
 
+
 function displayForecast(response) {
 
   let forecastDaily = response.data.daily;
-
-  console.log(forecastDaily);
   
   let forecastHTML = `<div class="row">`;
   forecastDaily.forEach(function(forecast, index) {
@@ -46,7 +45,8 @@ function displayForecast(response) {
     <div class="col col-sm-2">
         <div class="temperature-date">${formatDay(forecast.dt)}</div>
         <div class="temperature-img">
-          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+          <img src="Images/${forecast.weather[0].icon}.png"
+           id="forecast-icon" />
         </div>
         <div class="temperature-of-the-date">${Math.round(forecast.temp.day)}°C</div>
       </div>
@@ -58,6 +58,7 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#weather-forecast");
   forecastElement.innerHTML = forecastHTML;        
+  
 }
 
 
