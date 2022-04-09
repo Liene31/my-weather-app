@@ -101,6 +101,10 @@ ul {
     width: 25px;
 }
 
+.forecast-cont {
+    padding: 0px;
+}
+
 .temperature-date,
 .temperature-img,
 .temperature-of-the-date,
