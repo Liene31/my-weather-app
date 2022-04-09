@@ -35,7 +35,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
 
-  let forecastDaily = response.data.daily;
+  let forecastDaily = response.data.daily;  
   
   let forecastHTML = `<div class="row">`;
   forecastDaily.forEach(function(forecast, index) {
@@ -48,7 +48,10 @@ function displayForecast(response) {
           <img src="Images/${forecast.weather[0].icon}.png"
            id="forecast-icon" />
         </div>
-        <div class="temperature-of-the-date">${Math.round(forecast.temp.day)}°C</div>
+        <div class="temperature-max-min">
+        <span>${Math.round(forecast.temp.max)}°</span>
+        <span>${Math.round(forecast.temp.min)}°</span>
+        </div>
       </div>
       `;
       }  

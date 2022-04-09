@@ -103,13 +103,19 @@ ul {
 
 .temperature-date,
 .temperature-img,
-.temperature-of-the-date {
+.temperature-of-the-date,
+.temperature-max-min {
     text-align: center;
     font-family: "Lora", serif;
     font-weight: 700;
     font-style: italic;
     color: #5a5560;
     font-size: 13px;
+}
+
+.temperature-max-min {
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .footer {    
