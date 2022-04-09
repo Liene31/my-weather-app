@@ -35,7 +35,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
 
-  let forecastDaily = response.data.daily;  
+  let forecastDaily = response.data.daily;    
   
   let forecastHTML = `<div class="row">`;
   forecastDaily.forEach(function(forecast, index) {
@@ -64,37 +64,6 @@ function displayForecast(response) {
   
 }
 
-
-function setIconImage(code) {    
-  
-    if (code === "01d") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/01d.png`);
-    } else if (code === "01n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/01n.png`);
-    } else if (code === "02d") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/02d.png`);
-    } else if (code === "02n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/02n.png`);
-    } else if (code === "03d" || code === "03n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/03d.png`);
-    } else if (code === "04d" || code === "04n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/04d.png`);
-    } else if (code === "09d" || code === "09n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/09d.png`);
-    } else if (code === "10d") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/10d.png`);
-    }  else if (code === "10n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/10n.png`);
-    } else if (code === "11d" || code === "11n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/11d.png`);
-    } else if (code === "13d" || code === "13n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/13d.png`);
-    } else if (code === "50d" || code === "50n") {
-      document.querySelector("#weather-icon").setAttribute("src",`Images/50d.png`);
-    }
-    
-  }
-
   function getForecast(coord) {
         
     let apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
@@ -120,9 +89,9 @@ function updateCurrentMeteo(response) {
       document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);  
 
       document.querySelector("#city").innerHTML = response.data.name;      
-      
-      
-      setIconImage(code);
+
+      document.querySelector("#weather-icon").setAttribute("src",`Images/${code}.png`);
+
       getForecast(response.data.coord); 
   
 }
